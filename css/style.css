@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.anim{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(../storage/background.png);
+    background-size: 100%;
+}
+.mensajes{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 90px;
+    background-image: url(../storage/mensaje.png);
+    transition: background-position 4s ease, opacity 0 ease 4s;
+    transition-duration: 4s;
+    transition-timing-function: ease;
+}
+.mensajes:hover{
+    background-position: bottom;
+    opacity: 0;
+}
+.nube1 {
+    background-image: url(../storage/cloud.png);
+    width: 200px;
+    height: 75px;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    transform: translateX(15.7vw);
+    transition: transform 3s ease 4s, opacity 3s ease 12s;
+}
+
+.mensajes:hover ~ .nube1{
+    transform: translateX(-43.3vw);
+    opacity: 0;
+}
+.nube2{
+    background-image: url(../storage/cloud.png);
+    width: 200px;
+    height: 75px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-43.3vw);
+    transition: transform 3s ease 15s, opacity 0s ease 7s;
+}
+.mensajes:hover ~ .nube2{
+    opacity: 1;
+    transform: translateX(-110.3vw);
+}
+.lluvia{
+    background-image: url(../storage/rain-background.png);
+    width: 200px;
+    height: 0px;
+    z-index: 5;
+    transform: translateY(5.9vw);
+    transition: height 2s ease 7s, transform 8s ease 7s;
+}
+.mensajes:hover ~ .nube1 .lluvia{
+    transform: translateY(47.2vw);
+    height: 400px;
+}
+.sol{
+    background-image: url(../storage/sun.png);
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    transform: translateX(5.5vw);
+    transition: transform 3s ease 15s, opacity 5s ease-in-out 18s;
+}
+.mensajes:hover ~ .sol{
+    transform: translateX(-18.1vw);
+    opacity: 0;
+}
+.flor{
+    background-image: url(../storage/flower.png);
+    width: 90px;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform: translateY(130px);
+    transition: all 4s ease 18s;
+}
+.mensajes:hover ~ .flor{
+    transform: translateY(0px);
+}
